@@ -196,7 +196,7 @@
                 <form id="contact-form">
                     <h1 style="text-align: center;">Contact Form</h1>
                     <input id="Name" type="text" name="user_name" placeholder="Your Name" required><br>
-                    <input id="Email" type="email" name="user_email" placeholder="Your Email" required><br>
+                    <input id="Email" type="email" name="email_id" placeholder="Your Email" required><br>
                     <input type="number" name="ConNum" placeholder="Your contact details" required><br>
                     <textarea name="message" rows="6" placeholder="Your Message"></textarea><br> 
                     <button type="submit" class="btn btn-warning">Submit</button>
@@ -209,17 +209,18 @@
 
 <!-- JavaScript for EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!--CDN link for emailjs-->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!--CDN link for emailjs-->
 <script>
     (function() {
-        emailjs.init("z0ha876xXuY5A32a-"); // Replace with your EmailJS user ID(It is in the form of a public key in Account section)
+        emailjs.init("z0ha876xXuY5A32a-"); // Replace with your EmailJS user ID
 
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
             // Collect form data
             var formData = {
-                user_name: this.user_name.value, //This uses the name parameter from the form elements to fetch the values and uses the this keyword to point to the location
-                user_email: this.user_email.value,
-                message: this.message.value
+                user_name: document.getElementsByName(user_name), //This uses the name parameter from the form elements to fetch the values and uses the this keyword to point to the location
+                email_id: document.getElementsByName(email_id),
+                message: document.getElementsByName(message)
             };
             // Send email
             emailjs.send("service_0hd97dm", "template_7ogwxe7", formData)
@@ -232,6 +233,8 @@
                 });
         });
     })();
+</script>
+
   </script>
   <footer class="footer">
       <div class="footer-content">
