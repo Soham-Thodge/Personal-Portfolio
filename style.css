@@ -211,8 +211,8 @@ img{
     }
     .contact-right form input,
     .contact-right form textarea {
-        width: 150%; 
-        max-width: 150;
+        width: 120%; 
+        max-width: 120;
     }
     #About-me .row {
         flex-direction: column; 
