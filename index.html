@@ -218,9 +218,9 @@
             event.preventDefault();
             // Collect form data
             var formData = {
-                user_name: document.getElementsByName(user_name), //This uses the name parameter from the form elements to fetch the values and uses the this keyword to point to the location
-                email_id: document.getElementsByName(email_id),
-                message: document.getElementsByName(message)
+                user_name: this.user_name.value, //This uses the name parameter from the form elements to fetch the values and uses the this keyword to point to the location
+                email_id: this.email_id.value,
+                message: this.message.value
             };
             // Send email
             emailjs.send("service_0hd97dm", "template_7ogwxe7", formData)
