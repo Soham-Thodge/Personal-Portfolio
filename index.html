@@ -195,7 +195,7 @@
             <div class="contact-right">
                 <form id="contact-form">
                     <h1 style="text-align: center;">Contact Form</h1>
-                    <input id="Name" type="text" name="user_name" placeholder="Your Name" required><br>
+                    <input id="Name" type="text" name="from_name" placeholder="Your Name" required><br>
                     <input id="Email" type="email" name="email_id" placeholder="Your Email" required><br>
                     <input type="number" name="ConNum" placeholder="Your contact details" required><br>
                     <textarea name="message" rows="6" placeholder="Your Message"></textarea><br> 
@@ -218,7 +218,7 @@
             event.preventDefault();
             // Collect form data
             var formData = {
-                from_name: this.user_name.value, //This uses the name parameter from the form elements to fetch the values and uses the this keyword to point to the location
+                from_name: this.from_name.value, //This uses the name parameter from the form elements to fetch the values and uses the this keyword to point to the location
                 email_id: this.email_id.value,
                 message: this.message.value
             };
