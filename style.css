@@ -189,11 +189,10 @@ img{
         padding-right: 15px;
         padding-bottom: 50px; 
     }
-        .check {
+    .check {
         position: absolute;
         top: 80%; /* Adjust as needed */
         left: 50%; /* Adjust as needed */
-        transform: translate(-50%, -50%);
         font-size: 20px;
     }
     .nav-link {
