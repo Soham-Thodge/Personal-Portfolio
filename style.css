@@ -46,12 +46,12 @@
     padding-right:30px;
     padding-bottom:100px;
 }
-.check{
-    align-items:center ;
-    justify-content: center;
-    margin-left:42.5%;
-    font-size:20px;
+.check {
     position: absolute;
+    top: 70%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%);
+    font-size: 20px;
 }
 h1{
     color:#FFC107;
