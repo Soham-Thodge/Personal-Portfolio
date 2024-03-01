@@ -192,8 +192,9 @@ img{
     .check {
         position: absolute;
         top: 80%; /* Adjust as needed */
-        left: 50%; /* Adjust as needed */
+        left: 60%; /* Adjust as needed */
         font-size: 20px;
+        margin-left:-40px;
     }
     .nav-link {
         font-size: 14px; 
