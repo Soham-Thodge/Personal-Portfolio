@@ -222,6 +222,30 @@ img{
         font-size: 20px;
         margin-left:-40px;
     }
+<<<<<<< HEAD
+=======
+    .navbar {
+        display: block;
+        /* Add styles as needed */
+    }
+    .nav-logo {
+    width: 30px;
+    height: 30px;
+    }
+
+    .nav-link {
+    color: white;
+    }
+
+    .nav-link:hover {
+    color: blueviolet;
+    }
+
+    .nav-link:active {
+        color: white;
+        font-size: 14px; 
+    }
+>>>>>>> cc191cf3724160eea22295ec6b68d7484f00487b
     .Info {
         margin-top: 20px; 
     }
