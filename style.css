@@ -11,8 +11,17 @@
     color: blueviolet;
 }
 
-.nav-link:active {
+.nav-link {
     color: white;
+}
+.dropdown-menu{
+    background-color: black;
+}
+.dropdown-item{
+    color:white;
+}
+.navbar-dark-toggler{
+    color:white;
 }
 
 .Hero-section {
@@ -154,18 +163,18 @@ img{
   
 .flex-form {
     display: flex;
-    flex-direction: column; /* Arrange items from top to bottom */
+    flex-direction: column;
     align-items: center;
-    max-width: 400px; /* Adjust as needed */
+    max-width: 400px; 
 }
   
 .flex-form input,
 .flex-form textarea,
 .flex-form button,
 .flex-form a {
-    margin-bottom: 10px; /* Adjust spacing between form elements */
-    width: 100%; /* Make form elements fill container width */
-    max-width: 300px; /* Adjust the maximum width of the input elements */
+    margin-bottom: 10px;
+    width: 100%; 
+    max-width: 300px; 
 }
 #contact{
     background-color: black;
@@ -208,13 +217,10 @@ img{
     }
     .check {
         position: absolute;
-        top: 80%; /* Adjust as needed */
-        left: 60%; /* Adjust as needed */
+        top: 80%;
+        left: 60%; 
         font-size: 20px;
         margin-left:-40px;
-    }
-    .nav-link {
-        font-size: 14px; 
     }
     .Info {
         margin-top: 20px; 
