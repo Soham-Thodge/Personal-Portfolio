@@ -181,6 +181,23 @@ img{
 .contact-right form{
     padding:4%;
 }
+.spinner-wrapper{
+    background-color: black;
+    top:0;
+    left:0;
+    position: fixed;
+    width:100%;
+    height:100%;
+    z-index: 9999;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 10s;
+}
+.spinner-border{
+    width:80px;
+    height:80px;
+}
 @media (max-width: 768px) {
     .text {
         font-size: 40px; 
@@ -190,8 +207,11 @@ img{
         padding-bottom: 50px; 
     }
     .check {
-        margin-left: 100px; 
-        margin-top: 20px;
+        position: absolute;
+        top: 80%; /* Adjust as needed */
+        left: 60%; /* Adjust as needed */
+        font-size: 20px;
+        margin-left:-40px;
     }
     .nav-link {
         font-size: 14px; 
@@ -267,5 +287,22 @@ img{
     }
     .copyright{
         font-size:15px;
+    }
+    .spinner-wrapper{
+        background-color: black;
+        top:0;
+        left:0;
+        position: fixed;
+        width:100%;
+        height:100%;
+        z-index: 9999;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 10s;
+    }
+    .spinner-border{
+        width:80px;
+        height:80px;
     }
 }
