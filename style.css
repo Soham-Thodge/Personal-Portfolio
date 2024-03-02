@@ -213,7 +213,25 @@ img{
         font-size: 20px;
         margin-left:-40px;
     }
+    .navbar {
+        display: block;
+        /* Add styles as needed */
+    }
+    .nav-logo {
+    width: 30px;
+    height: 30px;
+    }
+
     .nav-link {
+    color: white;
+    }
+
+    .nav-link:hover {
+    color: blueviolet;
+    }
+
+    .nav-link:active {
+        color: white;
         font-size: 14px; 
     }
     .Info {
