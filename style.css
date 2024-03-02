@@ -207,6 +207,11 @@ img{
     width:80px;
     height:80px;
 }
+.copyright{
+    text-align:center;
+    font-size:35px;
+    font-weight:500;
+}
 @media (max-width: 768px) {
     .text {
         font-size: 40px; 
@@ -262,8 +267,10 @@ img{
     }
     .contact-right form input,
     .contact-right form textarea {
-        width: 100%; 
-        max-width: 100%;
+        width: 110%; 
+        max-width: 110%;
+        justify-content: center;
+        align-items: center;
     }
     #About-me .row {
         flex-direction: column; 
@@ -316,7 +323,9 @@ img{
         height:500px;
     }
     .copyright{
-        font-size:15px;
+        text-align:center;
+        font-size:20px;
+        font-weight:500;
     }
     .spinner-wrapper{
         background-color: black;
