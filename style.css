@@ -12,8 +12,9 @@
 }
 
 .nav-link:active {
-    color: white;
+    color: blueviolet;
 }
+
 
 .Hero-section {
     position: relative;
@@ -140,11 +141,11 @@ img{
     list-style-type: none;
     padding: 0;
     display: flex;
-    padding-left:40%;
+    padding-left:42%;
 }
 .social-icons li a {
     color: black;
-    margin-right: 30px;
+    margin-right: 40px;
     font-size:40px;
 }
 .contact-right {

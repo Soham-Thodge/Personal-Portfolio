@@ -91,7 +91,7 @@ window.onload = () => {
                 // Initial start of the animation
                 interval = setInterval(textTypingEffect, 250);
             </script>
-            <button type="button"class="btn btn-warning check">Check out my work!</button>
+            <a href="#Projects"><button type="button" class="btn btn-warning check">Check out my work!</button></a>
         </div>
     </div>
     <!--Main section ends-->
@@ -209,7 +209,7 @@ window.onload = () => {
       <div class="container">
         <div class="row">
             <div class="contact-right">
-                <form id="contact-form">
+                <form id="contact-form" role="form">
                     <h1 style="text-align: center;">Contact Form</h1>
                     <input id="Name" type="text" name="from_name" placeholder="Your Name" required><br>
                     <input id="Email" type="email" name="email_id" placeholder="Your Email" required><br>
@@ -243,6 +243,7 @@ window.onload = () => {
                 .then(function(response) {
                     console.log('Email sent successfully:', response);
                     alert('Email sent successfully!');
+                    document.getElementById('contact-form').reset();
                 }, function(error) {
                     console.error('Error sending email:', error);
                     alert('Error sending email. Please try again later.');
