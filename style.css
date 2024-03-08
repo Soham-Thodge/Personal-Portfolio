@@ -199,6 +199,38 @@ img{
     width:80px;
     height:80px;
 }
+.popup-message {
+    display:flex;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -30%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-message.success {
+    padding:10px 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #28a745;
+}
+
+.popup-message.error {
+    width:400px;
+    height:200px;
+    padding:10px 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #dc3545;
+}
 @media (max-width: 768px) {
     .text {
         font-size: 40px; 

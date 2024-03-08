@@ -54,10 +54,27 @@ window.onload = () => {
                 </ul>
               </li>
             </ul>
-            <form class="d-flex" role="search">
+            <!--Search component-->
+            <form class="d-flex" role="search" id="search-form">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="SearchInput">
               <button class="btn btn-warning" type="submit">Search</button>
             </form>
+            <script>
+              document.getElementById('search-form').addEventListener('submit', function(event) {
+                  event.preventDefault();
+                  var searchQuery = document.getElementById('SearchInput').value.toLowerCase();
+                  var sections = document.querySelectorAll('.scroll-to-section');
+          
+                  sections.forEach(function(section) {
+                      var sectionTitle = section.querySelector('h1').textContent.toLowerCase(); // Assuming your sections have titles
+                      if (sectionTitle.includes(searchQuery)) {
+                          section.scrollIntoView({ behavior: 'smooth' }); // Scroll to the section if it matches the search query
+                          return; // Exit the loop after finding the first matching section
+                      }
+                  });
+              });
+          </script>
+            <!--Search component ends-->
           </div>
         </div>
       </nav>
@@ -96,9 +113,9 @@ window.onload = () => {
     </div>
     <!--Main section ends-->
     <!--About section starts-->
-    <div id="About-me" class="container-fluid text-center bg-black">
+    <div id="About-me" class="container-fluid text-center bg-black scroll-to-section">
         <div class="row align-items-start">
-          <h1>About me</h1>
+          <h1 class="container-title">About me</h1>
             <div class="col-6 Info">
                 <p>Hi this is Soham Thodge,an I.T. junior studying at Savitribai Phule Pune University.I'm a Full-Stack Developer who also specializes in Google Cloud and DevOps fundamentals. I have particular interests in software developement and creating content for the web platform.</p>
             </div>
@@ -109,8 +126,8 @@ window.onload = () => {
     </div>
     <!--About section ends-->
     <!--Project section starts-->
-    <div id="Projects" class="Projects">
-      <h1 class="Project-title">My Projects</h1>
+    <div id="Projects" class="Projects scroll-to-section">
+      <h1 class="Project-title container-title">My Projects</h1>
       <div class="card-container">
         <div class="card">
           <video controls width="600" height="400">
@@ -158,8 +175,8 @@ window.onload = () => {
     </div>
     <!--Project section ends-->
     <!--Certification section starts-->
-    <div id="certifications" class="Certifications">
-      <h1 style="color:#ffc107;text-align: center;">My Certifications</h1>
+    <div id="certifications" class="Certifications scroll-to-section">
+      <h1 style="color:#ffc107;text-align: center;" class="container-title">My Certifications</h1>
       <div class="card-container">
         <div class="card">
           <img src="images/Accenture.png">
@@ -213,47 +230,56 @@ window.onload = () => {
                     <h1 style="text-align: center;">Contact Form</h1>
                     <input id="Name" type="text" name="from_name" placeholder="Your Name" required><br>
                     <input id="Email" type="email" name="email_id" placeholder="Your Email" required><br>
-                    <input type="number" name="ConNum" placeholder="Your contact details" required><br>
-                    <textarea name="message" rows="6" placeholder="Your Message"></textarea><br> 
+                    <input type="tel" name="ConNum" id="ConNum" placeholder="Your contact details" required><br>
+                    <textarea name="message" style="padding:2%;"rows="6" placeholder="Your Message"></textarea><br> 
                     <button type="submit" class="btn btn-warning">Submit</button>
                     <a href="SohamThodge_InternshalaResume.pdf" download class="btn btn-warning">Download CV</a>
                 </form>
             </div>
-        </div>
+        </div>  
     </div>
 </div>
-
 <!-- JavaScript for EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!--CDN link for emailjs-->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!--CDN link for emailjs-->
 <script>
-    (function() {
-        emailjs.init("z0ha876xXuY5A32a-"); // Replace with your EmailJS user ID
+  (function() {
+      emailjs.init("z0ha876xXuY5A32a-"); // Replace with your EmailJS user ID
 
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Collect form data
-            var formData = {
-                from_name: this.from_name.value, //This uses the name parameter from the form elements to fetch the values and uses the this keyword to point to the location
-                email_id: this.email_id.value, //Note:-The variables used here are to be the same ones used in the emailjs template
-                message: this.message.value
-            };
-            // Send email
-            emailjs.send("service_0hd97dm", "template_7ogwxe7", formData)
-                .then(function(response) {
-                    console.log('Email sent successfully:', response);
-                    alert('Email sent successfully!');
-                    document.getElementById('contact-form').reset();
-                }, function(error) {
-                    console.error('Error sending email:', error);
-                    alert('Error sending email. Please try again later.');
-                });
-        });
-    })();
-</script>
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          var formData = {
+              from_name: this.from_name.value,
+              email_id: this.email_id.value,
+              message: this.message.value,
+              ConNum:this.ConNum.value
+          };
 
+          emailjs.send("service_0hd97dm", "template_7ogwxe7", formData)
+              .then(function(response) {
+                  console.log('Email sent successfully:', response);
+                  showPopupMessage('Email sent successfully!', 'success');
+                  document.getElementById('contact-form').reset();
+              })
+              .catch(function(error) {
+                  console.error('Error sending email:', error);
+                  showPopupMessage('Error sending email. Please try again later.', 'error');
+              });
+      });
+
+      function showPopupMessage(message, type) {
+          var popup = document.createElement('div');
+          popup.textContent = message;
+          popup.classList.add('popup-message', type);
+          document.body.appendChild(popup);
+          popup.style.display = 'block'; 
+          setTimeout(function() {
+              popup.style.display = 'none';
+              document.body.removeChild(popup); 
+          }, 3000); 
+      }
+  })();
   </script>
-  <footer class="footer">
+<footer class="footer">
       <div class="footer-content">
           <p class="copyright" style="text-align:center;font-size:35px;font-weight:500;">&copy; 2024 Maintained by Soham Thodge</p>
           <ul class="social-icons">
