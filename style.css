@@ -65,9 +65,9 @@ p{
     text-align: left;
 }
 .About-me{
-    height:300px;
-    width:300px;
-    border-radius: 150px;
+    height:350px;
+    width:350px;
+    border-radius: 75px;
 }
 #About-me{
     padding:5%;
@@ -144,6 +144,9 @@ img{
     color: black;
     margin-right: 40px;
     font-size:40px;
+}
+i {
+    font-size:20px;
 }
 .contact-right {
     display: flex;
