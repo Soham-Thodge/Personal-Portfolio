@@ -327,3 +327,70 @@ img {
     font-size: 24px;
     text-align: center;
 }
+@media screen and (max-width: 768px) {
+    /* Adjustments for smaller screens */
+    .nav-logo {
+        width: 60px; /* Adjust size for smaller screens */
+        height: 60px; /* Adjust size for smaller screens */
+    }
+
+    .text {
+        font-size: 7vw; /* Responsive font size */
+        padding-top: 20%; /* Responsive padding */
+    }
+
+    .check {
+        font-size: 4vw; /* Responsive font size */
+    }
+
+    h1 {
+        font-size: 6vw; /* Responsive font size */
+    }
+
+    p {
+        font-size: 4vw; /* Responsive font size */
+    }
+
+    .About-me {
+        width: 70%; /* Adjust size for smaller screens */
+        max-width: 200px; /* Limit maximum width */
+    }
+
+    .Info {
+        margin-top: 10%; /* Responsive margin */
+    }
+
+    .project-title-container {
+        padding: 2vw; /* Responsive padding */
+        margin-bottom: 2vw; /* Responsive margin */
+    }
+
+    .card {
+        width: 80%; /* Adjust width for smaller screens */
+    }
+
+    .card-title {
+        font-size: 6vw; /* Responsive font size */
+    }
+
+    .card-text {
+        font-size: 5vw; /* Responsive font size */
+    }
+
+    .social-icons li a {
+        margin-right: 3vw; /* Responsive margin */
+        font-size: 7vw; /* Responsive font size */
+    }
+
+    .contact-right form input,
+    .contact-right form textarea {
+        width: 95%; /* Adjust width for smaller screens */
+        padding: 3%; /* Responsive padding */
+        margin-bottom: 3vw; /* Responsive margin */
+    }
+
+    .contact-title-container {
+        padding: 2vw; /* Responsive padding */
+        margin-bottom: 2vw; /* Responsive margin */
+    }
+}
