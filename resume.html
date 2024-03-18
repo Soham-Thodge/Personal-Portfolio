@@ -74,66 +74,37 @@
             list-style-type: none;
             padding: 0;
             display: flex;
-            padding-left:42%;
+            padding-left:40%;
         }
         .social-icons li a {
             color: black;
             margin-right: 30px;
             font-size:40px;
         }
-        @media (max-width:768px){
-            .copyright{
-                font-size:20px;
-            }
-            .social-icons {
-                margin-left: -80px;
-            }
-            .social-icons li {
-                margin: 0 10px; 
-            }
-        }
     </style>
-    <!--Navbar starts-->
     <nav class="navbar navbar-expand-lg bg-black">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="https://soham-thodge.vercel.app/#">
-                <li>
-                    <img style="width:40px;height:40px;margin-right: 10px;" src="images/Logo.png">
-                </li>
-            </a>
-            <!-- Navbar toggler for mobile -->
-            <button class="navbar-light-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="https://soham-thodge.vercel.app/#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About me</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            More
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/resume.html">Resume</a></li>
-                            <li><a class="dropdown-item" href="#certifications">Certifications</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#Projects">Projects</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Link</a>
-                    </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    <!--Navbar ends-->
-    <!--Resume starts-->
-    <div class="container scroll-to-section" id="Resume">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a> 
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li>
+            <img style="width:40px;height:40px;margin-right: 10px;" src="images/Logo.png">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html#About-me">About Me</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-warning" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    </nav>
+    <div class="container">
     <header>
         <h1>Soham Thodge</h1>
         <p style="text-align: center;">Full-Stack Developer & DevOps Enthusiast</p>
@@ -182,9 +153,9 @@
         <div class="footer-content">
             <p class="copyright" style="text-align:center;font-size:35px;font-weight:500;color:black">&copy; 2024 Maintained by Soham Thodge</p>
             <ul class="social-icons">
-              <li><a href="https://github.com/Soham-Thodge" target="_blank"><i class="fab fa-github"></i></a></li>
-              <li><a href="https://developers.google.com/profile/u/TheOnlySoham" target="_blank"><i class="fab fa-google"></i></a></li>
-              <li><a href="https://www.linkedin.com/in/soham-thodge-515676229" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+              <li><a href="https://github.com/Soham-Thodge"><i class="fab fa-github"></i></a></li>
+              <li><a href="https://developers.google.com/profile/u/TheOnlySoham"><i class="fab fa-google"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/soham-thodge-515676229"><i class="fab fa-linkedin"></i></a></li>
             </ul>
         </div>
     </footer>
