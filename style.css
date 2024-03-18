@@ -172,6 +172,7 @@ p {
     padding: 5%;
 }
 
+
 img {
     height: 350px;
     width: 500px;
@@ -189,6 +190,13 @@ img {
 .footer {
     background-color: #FFC107;
     padding: 5%;
+}
+.contacts{
+    background-image: url("images/Contact-form.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
 }
 
 .social-icons {
