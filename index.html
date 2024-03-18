@@ -231,6 +231,11 @@ window.onload = () => {
  </div>
   <!--Contact form ends-->
 
+  <!-- Add this div for email status overlay -->
+  <div id="email-status-overlay">
+    <div id="email-status-message"></div>
+  </div>
+
 <!-- JavaScript for EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!--CDN link for emailjs-->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!--CDN link for emailjs-->
@@ -247,14 +252,23 @@ window.onload = () => {
                 message: this.message.value
             };
             // Send email
-            emailjs.send("service_0hd97dm", "template_7ogwxe7", formData)
+           // Inside your emailjs send function
+           function resetFormFields() {
+              document.getElementById('contact-form').reset(); // Reset the for
+            }
+          emailjs.send("service_0hd97dm", "template_7ogwxe7", formData)
                 .then(function(response) {
-                    console.log('Email sent successfully:', response);
-                    alert('Email sent successfully!');
-                }, function(error) {
-                    console.error('Error sending email:', error);
-                    alert('Error sending email. Please try again later.');
-                });
+                console.log('Email sent successfully:', response);
+                document.getElementById('email-status-message').innerText = 'Email sent successfully!';
+                document.getElementById('email-status-overlay').style.display = 'block';
+                resetFormFields();
+                }, 
+               function(error) {
+                console.error('Error sending email:', error);
+                document.getElementById('email-status-message').innerText = 'Error sending email. Please try again later.';
+                document.getElementById('email-status-overlay').style.display = 'block'; // Show overlay
+          });
+
         });
     })();
 </script>
