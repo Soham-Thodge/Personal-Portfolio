@@ -28,40 +28,45 @@ window.onload = () => {
     };
   </script>
   <!--Navbar starts-->
-    <nav class="navbar navbar-expand-lg bg-black">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"></a> 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li>
-                <img style="width:40px;height:40px;margin-right: 10px;" src="images/Logo.png">
+<nav class="navbar navbar-expand-lg bg-black">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+          <img style="width:40px;height:40px;margin-right: 10px;" src="images/Logo.png">
+      </a>
+      <!-- Add toggler button for mobile -->
+      <button class="navbar-toggler" type="button" style="color:white;" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#About-me">About Me</a>
+                  <a class="nav-link" href="#About-me">About Me</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  More
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="resume.html">Resume</a></li>
-                  <li><a class="dropdown-item" href="#certifications">Certifcations</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#Projects">Projects    </a></li>
-                </ul>
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      More
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="resume.html">Resume</a></li>
+                      <li><a class="dropdown-item" href="#certifications">Certifications</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#Projects">Projects</a></li>
+                  </ul>
               </li>
-            </ul>
-            <form class="d-flex" role="search">
+          </ul>
+          <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="SearchInput">
               <button class="btn btn-warning" type="submit">Search</button>
-            </form>
-          </div>
+          </form>
         </div>
-      </nav>
-      <!--Navbar ends-->
+    </div>
+  </nav>
+<!--Navbar ends-->
+
+
       <!--Main Section-->
       <div class="Hero-section">
         <div class="overlay">
@@ -221,7 +226,7 @@ window.onload = () => {
                   <input id="Name" type="text" name="from_name" placeholder="Your Name" required><br>
                   <input id="Email" type="email" name="email_id" placeholder="Your Email" required><br>
                   <input type="number" name="ConNum" placeholder="Your contact details" required><br>
-                  <textarea name="message" rows="6" placeholder="Your Message"></textarea><br> 
+                  <textarea name="message" rows="6" placeholder=" Your Message"></textarea><br> 
                   <button type="submit" class="btn btn-warning">Submit</button>
                   <a href="SohamThodge_InternshalaResume.pdf" download class="btn btn-warning">Download CV</a>
               </form>
@@ -254,7 +259,7 @@ window.onload = () => {
             // Send email
            // Inside your emailjs send function
            function resetFormFields() {
-              document.getElementById('contact-form').reset(); // Reset the for
+              document.getElementById('contact-form').reset(); // Reset the form
             }
           emailjs.send("service_0hd97dm", "template_7ogwxe7", formData)
                 .then(function(response) {
