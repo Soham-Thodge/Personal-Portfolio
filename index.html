@@ -11,18 +11,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="cursor"></div>
   <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
-  <script>
-    import { SpeedInsights } from "@vercel/speed-insights/next"
+    document.addEventListener('mousemove', (e) => {
+    const cursor = document.querySelector('.cursor');
+    cursor.style.left = e.pageX + 'px';
+    cursor.style.top = e.pageY + 'px';  
+  });
   </script>
   <div class="spinner-wrapper">
     <div class="spinner-border text-warning" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
+  <div class="cursor"></div>
   <script>
     const spinnerWrapperEl = document.querySelector('.spinner-wrapper');
 
@@ -66,20 +68,45 @@ window.onload = () => {
           </ul>
           <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="SearchInput">
-              <button class="btn btn-warning" type="submit">Search</button>
+              <button class="btn btn-warning" type="submit" onclick="return search()">Search</button>
           </form>
+          </div>
         </div>
-      </div>
-    </nav>
-    <!--Navbar ends-->
-
-
-    <!--Main Section-->
-    <div class="Hero-section">
-      <div class="overlay">
-          <div class="text"></div>
-          <!--Script used to print elements by going through for loop-->
-          <script>
+      </nav>
+      <script>
+        function search() {
+          // Get the search input value
+          var searchTerm = document.getElementById('SearchInput').value.trim();
+          
+          // Check if the search term is not empty
+          if (searchTerm !== "") {
+            // Find the element with the matching ID
+            var targetElement = document.getElementById(searchTerm);
+            
+            // Check if the target element exists
+            if (targetElement) {
+              // Scroll to the target element
+              targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+              // Alert if the target element does not exist
+              alert("No matching result found for '" + searchTerm + "'");
+            }
+          } else {
+            // Alert if the search term is empty
+            alert("Please enter a search term");
+          }
+          
+          // Prevent the default form submission
+          return false;
+        }
+      </script>
+      <!--Navbar ends-->
+      <!--Main Section-->
+      <div class="Hero-section">
+        <div class="overlay">
+            <div class="text"></div>
+            <!--Script used to print elements by going through for loop-->
+            <script>
                 const div = document.querySelector(".text");
                 const text = "Hi this is Soham Thodge, a Full-Stack Developer.";
                 let i = 0;
@@ -103,75 +130,87 @@ window.onload = () => {
                 // Initial start of the animation
                 interval = setInterval(textTypingEffect, 250);
             </script>
-            <a href="#Projects"><button type="button" class="btn btn-warning check">Check out my work!</button></a>
+            <button type="button"class="btn btn-warning check">Check out my work!</button>
         </div>
-      </div>
+    </div>
     <!--Main section ends-->
     <!--About section starts-->
     <div id="About-me" class="container-fluid text-center bg-black">
         <div class="row align-items-start">
           <h1>About me</h1>
-            <div class="col-6 Info">
-                <p>Hi this is Soham Thodge,an I.T. junior studying at Savitribai Phule Pune University.I'm a Full-Stack Developer who also specializes in Google Cloud and DevOps fundamentals. I have particular interests in software developement and creating content for the web platform.</p>
-            </div>
-            <div class="col-6">
-              <img class="About-me" src="images/About-me.png">
+            <div class="col-12">
+                <p class="code-editor"><span style="color:grey;">About><br></span>
+                <span style="color:#5918df;">public class </span> <span style="color:yellow;">Soham Thodge</span> <span style="color:white;">{ <br>
+                <span style="color:grey;">//This is my attempt at a code editor theme.<br>
+                </span>}<br><span style="color:#5918df;">interface() </span><span style="color:white;">{<br>
+                <span style="color:red;"> &nbsp;&nbsp;&nbsp;&nbsp;const</span><span style="color:#24e394";> name</span><span style="color:white;"> =</span><span style="color:#24e33a;"> Soham Thodge;</span><br>
+                <span style="color:red;"> &nbsp;&nbsp;&nbsp;&nbsp;const</span><span style="color:#24e394";> dateOfBirth</span><span style="color:white;"> =</span><span style="color:#24e33a;"> 1061317800;</span><br>
+                <span style="color:red;"> &nbsp;&nbsp;&nbsp;&nbsp;const</span><span style="color:#24e394";> email</span><span style="color:white;"> =</span><span style="color:#24e33a;"> thodgesoham17@gmail.com;</span><br>}</span></span><br>
+                <span style="color:yellow;">Experience</span> <span style="color:white;">{<br>
+                <span style="color:#5918df;"> &nbsp;&nbsp;&nbsp;&nbsp;return </span><span style="color:white;">(<br> 
+                <span style="color:#007bff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"2023 (3 Months): Salesforce Virtual Developer"}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"2024(2 Months): Frontend Developer Intern @Madquick Pvt. Ltd."}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"2023-2024 : GDSC TCOER Cloud Computing Lead"}</span><br> &nbsp;&nbsp;&nbsp;&nbsp;)<br>}</span><br>
+                <span style="color:yellow;">Skills</span> <span style="color:white;">{<br>
+                <span style="color:#5918df;"> &nbsp;&nbsp;&nbsp;&nbsp;return </span><span style="color:white;">(<br> 
+                <span style="color:#24e33a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['Html','Css','ReactJs','Git','DevOps','Google Cloud']</span><br>&nbsp;&nbsp;&nbsp;&nbsp;)<br>}<br></span>
+                <span style="color:grey;">About/></p>
             </div>
         </div>
     </div>
     <!--About section ends-->
     <!--Project section starts-->
     <div id="Projects" class="Projects">
-      <div class="overlays">
         <div class="project-title-container">
           <h1 class="Project-title">My Projects</h1>
         </div>
         <div class="card-container">
         <div class="card">
-          <video controls width="600" height="400">
+          <video autoplay loop muted controls="false" width="600" height="400">
             <source src="videos/Dabewallah.mp4" type="video/mp4">
           </video>  
-          <div class="card-body">
+          <div class="card-info">
             <h5 class="card-title">Dabewallah</h5>
-            <p class="card-text">This site acts as a online portal for food delivery and tracking services.</p>
-            <a href="https://soham-thodge.github.io/Google_solution_challenge/" class="btn btn-warning">Go There</a><br><br>
+            <p class="card-text" style="text-align: center;">This site acts as a online food portal.</p>
+            <a href="https://soham-thodge.github.io/Google_solution_challenge/" class="btn btn-warning" target="_blank">Go There</a><br><br>
             <a href="https://github.com/Soham-Thodge/Google_solution_challenge"  target="_blank"><i class="fab fa-github" style="color:#ffc107; font-size:30px;"></i></a>
           </div>
         </div>
         <div class="card">
-          <video controls width="600" height="400">
+          <video autoplay loop muted controls="false" width="600" height="400">
             <source src="videos/Gems-galaxy.mp4 " type="video/mp4">
           </video>
-          <div class="card-body">
+          <div class="card-info">
             <h5 class="card-title">Gems-galaxy</h5>
-            <p class="card-text">This site acts as a online portal for Jewellery sales and e-commerce.</p>
-            <a href="https://wearyengine.s4-tastewp.com/" class="btn btn-warning">Go There</a><br><br>
+            <p class="card-text" style="text-align: center;">This site acts as a online portal for Jewellery sales and e-commerce.</p>
+            <div>
+            <a href="https://wearyengine.s4-tastewp.com/" class="btn btn-warning" target="_blank">Go There</a><br><br>
             <a href="https://github.com/Soham-Thodge/Gems_Galaxy"  target="_blank"><i class="fab fa-github" style="color:#ffc107; font-size:30px;"></i></a>
+            </div>
           </div>
         </div>
       </div>
       <div class="card-container">
         <div class="card">
-          <video controls width="600" height="400">
+          <video autoplay loop muted controls="false" width="600" height="400">
             <source src="videos/Github.mp4" type="video/mp4">
           </video>  
-          <div class="card-body">
+          <div class="card-info">
             <h5 class="card-title">Github</h5>
-            <p class="card-text">Run demo-deploy builds and open source contributions</p>
-            <a href="https://github.com/Soham-Thodge/actions-learning-pathway" class="btn btn-warning">Go There</a>
+            <p class="card-text" style="text-align: center;">Run demo-deploy builds and open source contributions</p>
+            <a href="https://github.com/Soham-Thodge/actions-learning-pathway" class="btn btn-warning" target="_blank">Go There</a>
           </div>
         </div>
         <div class="card">
-          <video controls width="600" height="400">
+          <video autoplay loop muted controls="false" width="600" height="400">
             <source src="videos/Google-cloud.mp4" type="video/mp4">
           </video>
-          <div class="card-body">
+          <div class="card-info">
             <h5 class="card-title">Google Cloud</h5>
-            <p class="card-text">Labs used to practice Google Cloud technologies.</p>
-            <a href="https://www.cloudskillsboost.google/public_profiles/6ecbd7a6-970c-43c5-8f42-68215a0e1555" class="btn btn-warning">Go There</a>
+            <p class="card-text" style="text-align: center;">Labs used to practice Google Cloud technologies.</p>
+            <a href="https://www.cloudskillsboost.google/public_profiles/6ecbd7a6-970c-43c5-8f42-68215a0e1555" class="btn btn-warning" target="_blank">Go There</a>
           </div>
         </div>
-      </div>
       </div>       
     </div>
     <!--Project section ends-->
@@ -221,35 +260,29 @@ window.onload = () => {
         </div>
       </div>
     </div>
-  <!--Certification section ends-->
-</div>
-<!--Contact form-->
-<div id="contact" class="contacts"> 
-  <div class="container">
-    <div class="row">
-        <div class="contact-right">
-            <form id="contact-form">
-              <div class="contact-title-container">
-                <h1 style="text-align: center;">Contact Form</h1>
-              </div>
-                <input id="Name" type="text" name="from_name" placeholder="Your Name" required><br>
-                <input id="Email" type="email" name="email_id" placeholder="Your Email" required><br>
-                <input type="number" name="ConNum" placeholder="Your contact details" required><br>
-                <textarea name="message" rows="6" placeholder=" Your Message"></textarea><br> 
-                <button type="submit" class="btn btn-warning">Submit</button>
-                <a href="SohamThodge_InternshalaResume.pdf" download class="btn btn-warning">Download CV</a>
-            </form>
-        </div>
-    </div>
-</div>
-</div>
-<!--Contact form ends-->
-  
-
-  <!-- Add this div for email status overlay -->
-  <div id="email-status-overlay">
-    <div id="email-status-message"></div>
   </div>
+  <!--Certification section ends-->
+  <!--Contact form-->
+  <div id="contact" class="contacts"> 
+    <div class="container">
+      <div class="row">
+          <div class="contact-right">
+              <form id="contact-form">
+                <div class="contact-title-container">
+                  <h1 style="text-align: center;">Contact Form</h1>
+                </div>
+                  <input id="Name" type="text" name="from_name" placeholder="Your Name" required><br>
+                  <input id="Email" type="email" name="email_id" placeholder="Your Email" required><br>
+                  <input type="number" name="ConNum" placeholder="Your contact details" required><br>
+                  <textarea name="message" rows="6" placeholder="   Your Message"></textarea><br> 
+                  <button type="submit" class="btn btn-warning">Submit</button>
+                  <a href="SohamThodge_InternshalaResume.pdf" download class="btn btn-warning">Download CV</a>
+              </form>
+          </div>
+      </div>
+  </div>
+ </div>
+  <!--Contact form ends-->
 
 <!-- JavaScript for EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!--CDN link for emailjs-->
@@ -257,9 +290,10 @@ window.onload = () => {
 <script>
     (function() {
         emailjs.init("z0ha876xXuY5A32a-"); // Replace with your EmailJS user ID
-
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
+
+
             // Collect form data
             var formData = {
                 from_name: this.from_name.value, //This uses the name parameter from the form elements to fetch the values and uses the this keyword to point to the location
@@ -267,23 +301,14 @@ window.onload = () => {
                 message: this.message.value
             };
             // Send email
-           // Inside your emailjs send function
-           function resetFormFields() {
-              document.getElementById('contact-form').reset(); // Reset the form
-            }
-          emailjs.send("service_0hd97dm", "template_7ogwxe7", formData)
+            emailjs.send("service_0hd97dm", "template_7ogwxe7", formData)
                 .then(function(response) {
-                console.log('Email sent successfully:', response);
-                document.getElementById('email-status-message').innerText = 'Email sent successfully!';
-                document.getElementById('email-status-overlay').style.display = 'block';
-                resetFormFields();
-                }, 
-               function(error) {
-                console.error('Error sending email:', error);
-                document.getElementById('email-status-message').innerText = 'Error sending email. Please try again later.';
-                document.getElementById('email-status-overlay').style.display = 'block'; // Show overlay
-          });
-
+                    console.log('Email sent successfully:', response);
+                    alert("Message sent succesfully!");
+                }, function(error) {
+                    console.error('Error sending email:', error);
+                    alert("Message not sent");
+                });
         });
     })();
 </script>
