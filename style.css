@@ -47,7 +47,7 @@ body {
 
 .nav-link {
     cursor:none !important;
-    color: white;
+    color: rgb(209, 66, 66);
     transition: color 0.3s ease;
 }
 
